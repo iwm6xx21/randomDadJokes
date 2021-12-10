@@ -1,10 +1,15 @@
 // grab elements from HTML file
 
+const grabTopH1Tag = document.getElementById("darkH1")
 const grabButton = document.getElementById("btn")
-const GrabjokeContainer = document.getElementById('jokeContainer')
+const grabjokeContainer = document.getElementById('jokeContainer')
 const grabh1Tag = document.getElementById("h1Tag")
 const grabWrapperApp = document.getElementById("wrapperApp")
 const grabCopyJoke = document.getElementById("copyJoke")
+const grabCopyButton = document.getElementById("copybtn")
+const grabDarkButton = document.getElementById("darkMode")
+const grabSpan = document.getElementById('newColor')
+
 
 // Grab random dad joke API using Axios tool
 
@@ -15,12 +20,12 @@ const getDadJoke = async () => {
     let api = res.data.joke
     H1 = document.createElement('h1')
     grabh1Tag.innerText = `${api}...🤣`
-    GrabjokeContainer.appendChild(H1)
+    grabjokeContainer.appendChild(H1)
 } 
 
 // Copy random joke to clipboard for sharing
 
-grabCopyJoke.addEventListener('click', ()=> {
+grabCopyButton.addEventListener('click', ()=> {
     handleCopyJoke()
 })
 
@@ -29,14 +34,6 @@ function handleCopyJoke() {
     cb.writeText(grabh1Tag.innerText).then(() => alert('Joke has been copied to the clipboard. Feel free to share!'));
   }
 
-
-
-
-
-
-// call getDadJoke function
-
-// getDadJoke()
 
 // Add event listen to joke generated
 
@@ -48,3 +45,20 @@ grabButton.addEventListener('click', () => {
     
 })
 
+
+
+// Change Theme
+grabDarkButton.addEventListener('click',() => {
+ grabTopH1Tag.style.color = "white"
+ grabSpan.style.color = "plum"
+ document.body.style.backgroundColor = "#292929"
+ grabWrapperApp.style.backgroundColor = "black"
+ grabWrapperApp.style.boxShadow = "4px 3px 8px 1px #131212";
+ grabh1Tag.style.color = "white"
+ grabjokeContainer.style.backgroundColor = "#292929"
+ grabButton.style.backgroundColor ="#1cdac6"
+ grabButton.style.color ="white"
+ grabCopyButton.style.backgroundColor ="plum"
+ grabCopyButton.style.color ="white"
+
+})
