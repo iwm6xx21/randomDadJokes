@@ -1,13 +1,13 @@
 // grab elements from HTML file
 
 const grabTopH1Tag = document.getElementById("darkH1")
-const grabButton = document.getElementById("btn")
-const grabjokeContainer = document.getElementById('jokeContainer')
-const grabh1Tag = document.getElementById("h1Tag")
-const grabWrapperApp = document.getElementById("wrapperApp")
-const grabCopyJoke = document.getElementById("copyJoke")
-const grabCopyButton = document.getElementById("copybtn")
-const grabDarkButton = document.getElementById("darkMode")
+const grabButton = document.querySelector(".btn")
+const grabjokeContainer = document.querySelector('.jokeContainer')
+const grabh1Tag = document.querySelector(".h1Tag")
+const grabWrapperApp = document.querySelector(".wrapperApp")
+const grabCopyJoke = document.querySelector(".copyJoke")
+const grabCopyButton = document.querySelector(".copybtn")
+const grabDarkButton = document.querySelector(".darkMode")
 const grabSpan = document.getElementById('newColor')
 
 
@@ -31,7 +31,7 @@ grabCopyButton.addEventListener('click', ()=> {
 
 function handleCopyJoke() {
     const cb = navigator.clipboard;
-    cb.writeText(grabh1Tag.innerText).then(() => alert('Joke has been copied to the clipboard. Feel free to share!'));
+    cb.writeText(grabh1Tag.innerText).then(() => alert('Joke has been copied. Feel free to share!'));
   }
 
 
@@ -46,19 +46,23 @@ grabButton.addEventListener('click', () => {
 })
 
 
-
-// Change Theme
+// Change to Dark Theme
 grabDarkButton.addEventListener('click',() => {
- grabTopH1Tag.style.color = "white"
- grabSpan.style.color = "plum"
- document.body.style.backgroundColor = "#292929"
- grabWrapperApp.style.backgroundColor = "black"
- grabWrapperApp.style.boxShadow = "4px 3px 8px 1px #131212";
- grabh1Tag.style.color = "white"
- grabjokeContainer.style.backgroundColor = "#292929"
- grabButton.style.backgroundColor ="#1cdac6"
- grabButton.style.color ="white"
- grabCopyButton.style.backgroundColor ="plum"
- grabCopyButton.style.color ="white"
+    grabTopH1Tag.classList.toggle("darkBanger")
+    document.body.classList.toggle("darkBody")
+    grabSpan.classList.toggle("darkSpan")
+    grabh1Tag.classList.toggle("darkH1Tag")
+    grabWrapperApp.classList.toggle("darkWrapperApp")
+    grabButton.classList.toggle("darkBtn")
+    grabCopyButton.classList.toggle("darkCopyBtn")
+    grabjokeContainer.classList.toggle('darkJokeContainer')
+    grabDarkButton.classList.toggle("darkDarkMode")
 
+    if(grabDarkButton.innerText === "DARK THEME") {
+        grabDarkButton.innerText = "LIGHT THEME"
+    }   else if (grabDarkButton.innerText === "LIGHT THEME") {
+        grabDarkButton.innerText = "DARK THEME"
+    }
+
+    
 })
