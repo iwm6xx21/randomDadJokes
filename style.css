@@ -51,8 +51,8 @@ span {
 }
 
 .btn:hover {
-  background-color: white;
-  color: darkmagenta;
+  background-color: plum;
+  color: white;
   border-radius: 8px;
 }
 
@@ -69,6 +69,51 @@ span {
   border-radius: 15px;
   overflow: auto;
   margin-top: 60px;
+}
+
+/* joke loader*/
+.loading {
+  position: fixed;
+  z-index: 999;
+  margin: auto;
+  overflow: show;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid plum;
+  width: 30px;
+  height: 30px;
+  margin: auto, 0;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.loading.display {
+  visibility: visible;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .copyJoke {
@@ -88,7 +133,7 @@ span {
 }
 
 .copybtn:hover {
-  background-color: white;
+  background-color: gainsboro;
   color: cadetblue;
   border-radius: 8px;
 }
@@ -127,8 +172,8 @@ span {
 }
 
 .darkMode:hover {
-  background-color: white;
-  color: black;
+  background-color: #3d3b3b;
+  color: white;
   border-radius: 8px;
 }
 
