@@ -6,7 +6,7 @@ With every click, a random dad joke will appear. With connections to one of the 
 
 Want to share a dad joke that's generated? No problem. Just click the 'Copy Joke' button to copy the text for sharing.
 
-![Random Dad Jokes Home Page](https://user-images.githubusercontent.com/90514977/145694645-6b6a41cd-8324-4af7-b7a2-0461f8e3b73d.png)
+![Random Dad Joke Home Page](https://user-images.githubusercontent.com/90514977/145697041-ceb1981d-5ee5-42bd-a7fa-5319116a91dd.png)
 
 ## Toggle Between Light Theme and Dark Theme
 
